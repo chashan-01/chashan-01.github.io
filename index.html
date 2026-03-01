@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘辉 - 产品经理 / AI产品经理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .header-right {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            border: 3px solid white;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 5px;
+            height: 24px;
+            background: #667eea;
+            border-radius: 3px;
+        }
+
+        .work-experience {
+            background: #f8f9ff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .company {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .position {
+            font-size: 16px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .date {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .work-content h4 {
+            font-size: 16px;
+            color: #333;
+            margin: 15px 0 10px 0;
+        }
+
+        .work-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .work-content li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .work-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .achievement-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .achievement-card p {
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .project {
+            background: #f8f9ff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .project-name a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .project-name a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .project-role {
+            font-size: 14px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .project-link {
+            margin-top: 15px;
+        }
+
+        .project-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-link a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .project-desc {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .name {
+                font-size: 32px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <div class="name">刘辉</div>
+                <div class="title">产品经理 / AI产品经理</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>陕西西安</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>18892081394</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                👨‍💼
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <div class="section-title">专业简介</div>
+                <p style="line-height: 1.8; color: #555; font-size: 16px;">
+                    9年 SaaS 产品经验，长期负责 B 端复杂系统，具备完整的产品全生命周期经验。
+                    主导多个项目从 0-1 及规模化增长，掌握 AI 在 B端 SaaS 场景的落地应用，
+                    以及 AI 场景识别、Prompt 设计、RAG 架构设计等。
+                </p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">工作经历</div>
+                <div class="work-experience">
+                    <div class="work-header">
+                        <div>
+                            <div class="company">西安朋客信息科技有限公司</div>
+                            <div class="position">产品负责人</div>
+                        </div>
+                        <div class="date">2017.03 - 2025.12</div>
+                    </div>
+                    <div class="work-content">
+                        <h4>主要职责：</h4>
+                        <ul>
+                            <li>负责公司多款B端SaaS产品（包括 "账款管家" "工程宝" "审批支付" "AIdowork"）的全生命周期与产品规划</li>
+                            <li>主导设计并完成 "银企直联"、"在线开票" 等高壁垒商业模块的从 0-1 搭建；负责应收应付、核算及库存等核心模块的深度需求</li>
+                            <li>主导并搭建产品部工作流程（产品需求、方案设计、原型设计、PRD文档、研发跟进、上线测试、数据分析、反馈迭代）、并沉淀方法论</li>
+                            <li>主导并搭建产品部伙伴的能力培训、以及员工成长体系</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">核心业绩</div>
+                <div class="achievements">
+                    <div class="achievement-card">
+                        <h4>从 0 到 1 规模化</h4>
+                        <p>主导核心垂直行业SaaS从0-1 并实现规模化营收</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h4>效率提升 65%</h4>
+                        <p>在业务流中引入完成AI能力（审批智能决策、表单自动填充），推动核心操作流程效率跃升65%以上</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h4>行业 Top 3</h4>
+                        <p>负责的《账款管家》长期占据钉钉平台财务品类Top3位置</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h4>用户增长 30%</h4>
+                        <p>付费企业用户数稳定在每年30%的增长，用户续费率70%，年GMV1000W+</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">关键项目</div>
+                
+                <div class="project">
+                    <div class="project-header">
+                        <div class="project-name"><a href="https://www.zhangkuanguanjia.com" target="_blank">账款管家</a></div>
+                        <div class="project-role">产品负责人</div>
+                    </div>
+                    <div class="project-desc">
+                        "账款管家" 是一款企业应收应付管理的 SaaS 软件，主要服务于中小型企业客户，
+                        覆盖应收、应付、核算、库存等核心业务模块。旨在解决中小型企业应收应付账款不清、
+                        回款不及时、多维度核算项目利润的问题。
+                    </div>
+                    <div class="work-content">
+                        <h4>职责与成果：</h4>
+                        <ul>
+                            <li>核心业务构建：主导设计并完成 "银企直联" 、 "在线开票" 、 "低代码平台" 等商业模块的从 0-1 搭建；负责应收应付、核算及库存等核心模块的深度需求</li>
+                            <li>AI 赋能与效率优化：率先引入 AI 智能化能力，将 AI 审批智能决策、表单自动生成等能力深度嵌套至现有复杂财务工作流中</li>
+                            <li>项目成果：推动产品在垂直企业市场的规模化应用，核心流程重构终端用户整体操作流转效率提升65% 以上；通过该体系沉淀出标准化的 B 端系统方法论</li>
+                        </ul>
+                    </div>
+                    <div class="project-link">
+                        <a href="https://www.zhangkuanguanjia.com" target="_blank">
+                            🔗 访问账款管家
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <div class="project-name"><a href="https://www.aidowork.net" target="_blank">AIdowork</a></div>
+                        <div class="project-role">AI产品经理</div>
+                    </div>
+                    <div class="project-desc">
+                        "AIdowork" 是一款针对传统企业中项目数据分散（业务数据、财务数据在不同的角色中）、
+                        项目利润统计不准、维度不清晰的问题；依托大语言模型与智能体技术，打造的AI项目管理软件。
+                    </div>
+                    <div class="work-content">
+                        <h4>职责与成果：</h4>
+                        <ul>
+                            <li>底层智能架构设计：完成核心意图识别体系的搭建与对话状态管理（DST）逻辑设计，确保复杂多轮交互中的业务意图精准穿透</li>
+                            <li>RAG 与上下文调度：制定并优化RAG（检索增强生成）架构下的私有文档切分与多路召回策略；设计长短文本上下文记忆管理机制，解决大模型在长周期项目数据流中的 "幻觉" 与遗忘问题</li>
+                            <li>评测体系与迭代：建立模型生成质量与业务准确率的评测体系，持续提升精准率、召回率；并建立业务指标、和技术指标</li>
+                            <li>项目成果：成功落地高可用性的 AI 智能体应用，实现非结构化项目数据向标准化决策视角的自动转化，进一步打通、并确定了 "SaaS + AI" 的产品方向</li>
+                        </ul>
+                    </div>
+                    <div class="project-link">
+                        <a href="https://www.aidowork.net" target="_blank">
+                            🔗 访问AIdowork
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">技能标签</div>
+                <div class="skills">
+                    <span class="skill-tag">产品管理</span>
+                    <span class="skill-tag">AI产品</span>
+                    <span class="skill-tag">SaaS</span>
+                    <span class="skill-tag">B端产品</span>
+                    <span class="skill-tag">RAG架构</span>
+                    <span class="skill-tag">Prompt设计</span>
+                    <span class="skill-tag">需求分析</span>
+                    <span class="skill-tag">产品规划</span>
+                    <span class="skill-tag">数据驱动</span>
+                    <span class="skill-tag">团队管理</span>
+                    <span class="skill-tag">商业化</span>
+                    <span class="skill-tag">用户体验</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
